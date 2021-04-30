@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!--CSS-->
     <link rel="stylesheet" href="css/styles.css">
-    <!--Java-->
-    <script src="java/script.js"></script>
+   <!--Java-->
+   <script src="java/script.js"></script>
+    <!--Jquery library-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
@@ -27,8 +29,43 @@
           <h1>Staff Login</h1>
             <label for="staffAccess">Staff Password:</label>
             <input type="text" id="staffAccess" placeholder="Password">
-            <button onclick="validate()" type="button">Login</button>
+            <button onclick="validate()" type="button" type="button" class="btn btn-dark">Login</button>
+            <br><label id="invalid" style="color: red; visibility:hidden">Invalid password</label>
         </div>
     </div>
+    <button id="getUsers">Get users</button>
+
+    
+
+    <div id="mainPage" class="container" >
+        
+    </div>
+
+    <script>
+        document.getElementById('getUsers').addEventListener('click', getUser);
+    
+        function getUser(){
+        fetch('https://randomuser.me/api/')
+        .then((res) => res.json())
+        .then((data) => {
+            
+            let output = '<h1>Costumers<h1>';
+            console.log(data);
+            
+            data.forEach(function(user){
+                output += `
+                <div>
+                    <h3>${user.results.gender}</h3>
+                    
+                </div>
+                `;
+            });
+            
+    
+            document.getElementById('mainPage').innerHTML = output;
+        })
+    };
+        </script>
+     
 </body>
 </html>
