@@ -33,13 +33,16 @@
             <br><label id="invalid" style="color: red; visibility:hidden">Invalid password</label>
         </div>
     </div>
-    <button id="getUsers">Get users</button>
+    <!--
+        after many attempts of trying to make the random API work I couldnt
+        worked with jaso placeholder but for a known reason random api didnt work at all, regardless of knowing I couldnt find out how to fix it
+    
+    <button id="getCostumers">Get Costumers</button>-->
 
     
 
-    <div id="mainPage" class="container" >
         
-    </div>
+    
 
     <script>
         document.getElementById('getUsers').addEventListener('click', getUser);
@@ -50,22 +53,183 @@
         .then((data) => {
             
             let output = '<h1>Costumers<h1>';
-            console.log(data);
-            
-            data.forEach(function(user){
-                output += `
-                <div>
-                    <h3>${user.results.gender}</h3>
-                    
-                </div>
-                `;
-            });
+            output +=`
+            <h2>test</h2>
+            <p>${data.results.gender}</p>
+
+            `
             
     
             document.getElementById('mainPage').innerHTML = output;
         })
     };
         </script>
-     
+
+    <div id="mainMenu" class="container" >  
+        <div>
+
+            <table>
+                <tr>
+                    <td>Starter</td>
+                    <td>Description</td>
+                    <td>Quantity</td>
+                    <td>Price</td>
+                </tr>
+                <tr>
+                    <td>Smoked salmon</td>
+                    <td>Silky smoked salmon, tangy crunchy beets, retro cress and fresh horseradish<strong>Gluten-free</strong></td>
+                    
+                    <td><input name="val_1" type="text" id="val_1" value="0" size="3" data-price="3"/></td>
+                    <td>€3</td>
+                </tr>
+                <tr>
+                    <td>Angry bean salad</td>
+                    <td>Green and yellow beans, fresh red chillies, rustic bread<br><strong>Vegetarian</strong></td>
+                    <td><input name="val_2" type="text" id="val_2" value="0" size="3" data-price="5"/></td>
+                </td>
+                    <td>€5</td>
+                </tr>
+                <tr>
+                    <td>Duck & orange salad</td>
+                    <td>Duck breast fillets, regular or blood oranges</td>
+                    
+                    <td><input name="val_3" type="text" id="val_3" value="0" size="3" data-price="9"/></td>
+                    <td>€9</td>
+                </tr>
+            </table><br>
+            <table>
+                <tr>
+                    <td>Main</td>
+                    <td>Description</td>
+                    <td>Quantity</td>
+                    <td>Price</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Duck breast fillets, regular or blood oranges</td>
+                    
+                    <td><input name="val_4" type="text" id="val_4" value="0" size="3" data-price="3"/></td>
+                    <td>€3</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Duck breast fillets, regular or blood oranges</td>
+                    <td><input type="text" size="3" name ="val_5" id="val_5" value ="0" data-price="9"></td>
+                    <td>€9</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Duck breast fillets, regular or blood oranges</td>
+                    <td><input type="text" size="3" name ="val_6" id="val_6" value ="0" data-price="9"></td>
+                    <td>€9</td>
+                </tr>
+            </table><br>
+        <table>
+                <tr>
+                    <td>Dessert</td>
+                    <td>Description</td>
+                    <td>Quantity</td>
+                    <td>Price</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Duck breast fillets, regular or blood oranges</td>
+                    
+                    <td><input name="val_7" type="text" id="val_7" value="0" size="3" data-price="3"/></td>
+                    <td>€3</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Duck breast fillets, regular or blood oranges</td>
+                    
+                    <td><input name="val_8" type="text" id="val_8" value="0" size="3" data-price="3"/></td>
+                    <td>€3</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Duck breast fillets, regular or blood oranges</td>
+                    
+                    <td><input name="val_9" type="text" id="val_9" value="0" size="3" data-price="3"/></td>
+                    <td>€3</td>
+                </tr>
+            </table><br>
+            <table>
+                <tr>
+                    <td>Drinks</td>
+                    <td>Description</td>
+                    <td>Quantity</td>
+                    <td>Price</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Duck breast fillets, regular or blood oranges</td>
+                    
+                    <td><input name="val_10" type="text" id="val_10" value="0" size="3" data-price="3"/></td>
+                    <td>€3</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Duck breast fillets, regular or blood oranges</td>
+                    
+                    <td><input name="val_11" type="text" id="val_11" value="0" size="3" data-price="3"/></td>
+                    <td>€3</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Duck breast fillets, regular or blood oranges</td>
+                    
+                    <td><input name="val_12" type="text" id="val_12" value="0" size="3" data-price="3"/></td>
+                    <td>€3</td>
+                </tr>
+            </table><br>
+
+            <table>
+
+                    <tr>
+                        <td></td>
+                        <td class="total"><strong>
+                            <div id="ItemsTotal">€0</div>
+                        </strong></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        var total_items = 12;
+
+        function totalBillCalc(){
+            var total = 0;
+
+            for (let i = 1; i <= total_items; i++) {
+               itemID =document.getElementById("val_" + i);
+               total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+                
+            }
+            document.getElementById('ItemsTotal').innerHTML = "€" + total;
+        }
+
+        document.querySelectorAll('[id^="val_"]').forEach(item => {
+            item.addEventListener('keyup', totalBillCalc);
+        });
+
+    </script>
+    
 </body>
 </html>
