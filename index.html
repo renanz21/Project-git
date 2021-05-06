@@ -34,6 +34,7 @@
             <p>(Password: Pass1234!)</p>
         </div>
     </div>
+    <!--div box containing all the page in order to hide for the use of password validation-->
 <div id="everything" style="display:none" >
      <div class="container"> 
          <br><button id="getCostumers" type="button" class="btn btn-secondary">Click to list the customers below</button> 
@@ -42,7 +43,7 @@
 
 
     <div id="mainPage" ></div>
-
+<!--Main menu including all options-->
     <div id="mainMenu" class="container" >  
         <br><div>
 
@@ -209,10 +210,12 @@
     </div>
 </div>
 <script>
+//total items of the menu
     var total_items = 12;
     
-
+// script for random users API
     document.getElementById('getCostumers').addEventListener('click', getUsers); 
+// script to apply event listener to all ID's
     document.querySelectorAll('[id^="val_"]').forEach(item => {
     item.addEventListener('keyup', totalBillCalc);
 });
