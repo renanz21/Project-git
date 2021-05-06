@@ -19,7 +19,7 @@
         <nav class ="navbar navbar-expand-sm bg-dark navbar-dark">
             <ul class="navbar-nav">
                 <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="info.html">More info</a></li>
+                <li class="nav-item"><a class="nav-link" href="info.html">Food Showcase</a></li>
             </ul>
         </nav>
 
@@ -34,131 +34,132 @@
             <p>(Password: Pass1234!)</p>
         </div>
     </div>
-<div id="everything" style="display:block">
-     <br> <button id="getCostumers" type="button" class="btn btn-secondary">Click to list the customers below</button> 
-<br>
-<br>
+<div id="everything" style="display:none" >
+     <div class="container"> 
+         <br><button id="getCostumers" type="button" class="btn btn-secondary">Click to list the customers below</button> 
+         <br><br>
+     </div>
 
-    <div id="mainPage"></div>
 
-    <div id="mainMenu" class="container">  
+    <div id="mainPage" ></div>
+
+    <div id="mainMenu" class="container" >  
         <br><div>
 
             <table>
-                <tr>
+                <tr id="headings">
                     <td>Starter</td>
                     <td>Description</td>
                     <td>Quantity</td>
                     <td>Price</td>
                 </tr>
                 <tr>
-                    <td>Smoked salmon</td>
+                    <td><b>Smoked salmon </b></td>
                     <td>Silky smoked salmon, tangy crunchy beets, retro cress and fresh horseradish<strong><br>Gluten-free</strong></td>
                     
-                    <td><input name="val_1" type="text" id="val_1" value="0" size="3" data-price="3"/></td>
-                    <td>€3</td>
+                    <td><input name="val_1" type="text" id="val_1" value="0" size="3" data-price="3" data-category="starter"/></td>
+                    <td><b>€3</b></td>
                 </tr>
                 <tr>
-                    <td>Angry bean salad</td>
+                    <td><b>Angry bean salad </b></td>
                     <td>Green and yellow beans, fresh red chillies, rustic bread<br><strong>Vegetarian</strong></td>
-                    <td><input name="val_2" type="text" id="val_2" value="0" size="3" data-price="5"/></td>
+                    <td><input name="val_2" type="text" id="val_2" value="0" size="3" data-price="5" data-category="starter" data-veg="Yes"/></td>
                 </td>
-                    <td>€5</td>
+                    <td><b>€5 </b></td>
                 </tr>
                 <tr>
-                    <td>Duck & orange salad</td>
+                    <td> <b> Duck & orange salad </b> </td>
                     <td>Duck breast fillets, regular or blood oranges</td>
                     
-                    <td><input name="val_3" type="text" id="val_3" value="0" size="3" data-price="9"/></td>
-                    <td>€9</td>
+                    <td><input name="val_3" type="text" id="val_3" value="0" size="3" data-price="9" data-category="starter"/></td>
+                    <td><b>€9 </b></td>
                 </tr>
             </table><br>
             <table>
-                <tr>
+                <tr id="headings">
                     <td>Main</td>
                     <td>Description</td>
                     <td>Quantity</td>
                     <td>Price</td>
                 </tr>
                 <tr>
-                    <td>4</td>
-                    <td>Duck breast fillets, regular or blood oranges</td>
+                    <td><b>Roast duck with Marsala gravy </b></td>
+                    <td>Whole duck, carrot, garlic, red onions <br><strong>Gluten-free</strong></td>
                     
-                    <td><input name="val_4" type="text" id="val_4" value="0" size="3" data-price="3"/></td>
-                    <td>€3</td>
+                    <td><input name="val_4" type="text" id="val_4" value="0" size="3" data-price="23" data-category="main"/></td>
+                    <td><b>€23 </b></td>
                 </tr>
                 <tr>
-                    <td>5</td>
-                    <td>Duck breast fillets, regular or blood oranges</td>
-                    <td><input type="text" size="3" name ="val_5" id="val_5" value ="0" data-price="9"></td>
-                    <td>€9</td>
+                    <td><b>Spinach & ricotta gnocchi</b></td>
+                    <td>Yong Spinach, parsley leaves, garlic clove <br><strong>Vegetarian</strong></td>
+                    <td><input type="text" size="3" name ="val_5" id="val_5" value ="0" data-price="19" data-category="main" data-veg="Yes"/></td>
+                    <td><b>€19</b></td>
                 </tr>
                 <tr>
-                    <td>6</td>
-                    <td>Duck breast fillets, regular or blood oranges</td>
-                    <td><input type="text" size="3" name ="val_6" id="val_6" value ="0" data-price="9"></td>
-                    <td>€9</td>
+                    <td><b>Roasted black bean burgers</td>
+                    <td>Red onions, rye bread, cheddar cheese, cherry tomatoes</td>
+                    <td><input type="text" size="3" name ="val_6" id="val_6" value ="0" data-price="29" data-category="main"/></td>
+                    <td><b>€29</b></td>
                 </tr>
             </table><br>
-        <table>
-                <tr>
+            <table>
+                <tr id="headings">
                     <td>Dessert</td>
                     <td>Description</td>
                     <td>Quantity</td>
                     <td>Price</td>
                 </tr>
                 <tr>
-                    <td>7</td>
-                    <td>Duck breast fillets, regular or blood oranges</td>
+                    <td><b>Coconut and yoghurt rice pudding arancini with yoghurt sorbet and mango</b></td>
+                    <td>Pudding rice, desiccated coconut, creamed coconut, black sesame seeds <br><strong>Gluten-free</strong></td>
                     
-                    <td><input name="val_7" type="text" id="val_7" value="0" size="3" data-price="3"/></td>
-                    <td>€3</td>
+                    <td><input name="val_7" type="text" id="val_7" value="0" size="3" data-price="26" data-category="dessert"/></td>
+                    <td><b>€26</b></td>
                 </tr>
                 <tr>
-                    <td>8</td>
-                    <td>Duck breast fillets, regular or blood oranges</td>
+                    <td><b>Chocolate, peanut butter & avocado pudding</b></td>
+                    <td>Ripe avocados, almond milk, peanut butter, cacao powder<br><strong>Vegetarian</strong></td>
                     
-                    <td><input name="val_8" type="text" id="val_8" value="0" size="3" data-price="3"/></td>
-                    <td>€3</td>
+                    <td><input name="val_8" type="text" id="val_8" value="0" size="3" data-price="33" data-category="dessert" data-veg="Yes"/></td>
+                    <td><b>€33</b></td>
                 </tr>
                 <tr>
-                    <td>9</td>
-                    <td>Duck breast fillets, regular or blood oranges</td>
+                    <td><b>Yoghurt cake with macerated strawberries and balsamic candied pistachios</b></td>
+                    <td>Greek yoghurt, strawberries, lemon, pistachio nuts</td>
                     
-                    <td><input name="val_9" type="text" id="val_9" value="0" size="3" data-price="3"/></td>
-                    <td>€3</td>
+                    <td><input name="val_9" type="text" id="val_9" value="0" size="3" data-price="56" data-category="dessert"/></td>
+                    <td><b>€56</b></td>
                 </tr>
             </table><br>
             <table>
-                <tr>
+                <tr id="headings">
                     <td>Drinks</td>
                     <td>Description</td>
                     <td>Quantity</td>
                     <td>Price</td>
                 </tr>
                 <tr>
-                    <td>10</td>
-                    <td>Duck breast fillets, regular or blood oranges</td>
+                    <td><b>Water</b></td>
+                    <td>Still or sparkling</td>
                     
-                    <td><input name="val_10" type="text" id="val_10" value="0" size="3" data-price="3"/></td>
-                    <td>€3</td>
+                    <td><input name="val_10" type="text" id="val_10" value="0" size="3" data-price="1" data-category="drink"/></td>
+                    <td><b>€1</b></td>
                 </tr>
                 <tr>
-                    <td>11</td>
-                    <td>Duck breast fillets, regular or blood oranges</td>
+                    <td><b>Wine</b></td>
+                    <td>Red or white wine</td>
                     
-                    <td><input name="val_11" type="text" id="val_11" value="0" size="3" data-price="3"/></td>
-                    <td>€3</td>
+                    <td><input name="val_11" type="text" id="val_11" value="0" size="3" data-price="30" data-category="drink"/></td>
+                    <td><b>€30</b></td>
                 </tr>
                 <tr>
-                    <td>12</td>
-                    <td>Duck breast fillets, regular or blood oranges</td>
+                    <td><b>Soda</b></td>
+                    <td>Fanta, coke or pepsi</td>
                     
-                    <td><input name="val_12" type="text" id="val_12" value="0" size="3" data-price="3"/></td>
-                    <td>€3</td>
+                    <td><input name="val_12" type="text" id="val_12" value="0" size="3" data-price="5" data-category="drink"/></td>
+                    <td> <b> €5</b></td>
                 </tr>
             </table><br>
-
             <table id="totalTable">
 
                     <tr>
@@ -169,27 +170,39 @@
                     </tr>
                     <tr>
                         <td> Starters Total</td>
-                        <td></td>
+                        <td>
+                            <div id="StarterTotal">€0</div>
+                        </td>
                     </tr>
                     <tr>
                         <td>Main Total</td>
-                        <td></td>
+                        <td>
+                            <div id="MainTotal">€0</div>
+                        </td>
                     </tr>
                     <tr>
                         <td>Desserts Total</td>
-                        <td></td>
+                        <td>
+                            <div id="DessertTotal">€0</div>
+                        </td>
                     </tr>
                     <tr>
                         <td>Drinks Total</td>
-                        <td></td>
+                        <td>
+                            <div id="DrinkTotal">€0</div>
+                        </td>
                     </tr>
                     <tr>
                         <td>Non-Vegetarian Total</td>
-                        <td></td>
+                        <td>
+                            <div id="NonVegTotal">€0</div>
+                        </td>
                     </tr>
                     <tr>
                         <td>Vegetarian Total</td>
-                        <td></td>
+                        <td>
+                            <div id="VegTotal">€0</div>
+                        </td>
                     </tr>
             </table>
         </div>
@@ -197,11 +210,13 @@
 </div>
 <script>
     var total_items = 12;
+    
 
     document.getElementById('getCostumers').addEventListener('click', getUsers); 
     document.querySelectorAll('[id^="val_"]').forEach(item => {
     item.addEventListener('keyup', totalBillCalc);
 });
+    
 </script>
 </body>
 </html>

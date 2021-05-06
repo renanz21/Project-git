@@ -1,31 +1,106 @@
-<!--CSS-->
-<link rel="stylesheet" href="css/styles.css">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price and Quantity Calculation</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+        
+        table {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 12px;
+            width: 400px;
+        }
+
+        table th {background-color: cadetblue; }
+        td.total {background-color: lightgrey; }
+        .right {text-align: right; }
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        <tr>
+            <td>Chicken fingers</td>
+            <td>
+                <input name="qnt_1" type="text" id="qnt_1" value="0" size="3" data-price="100" data-category="A"/></td>
+            <td>€100</td>
+        </tr>
+        <tr>
+            <td>Item B</td>
+            <td><input name="qnt_2" type="text" id="qnt_2" value="0" size="3" data-price="50" data-category="A"/></td>
+            <td>€50</td>
+        </tr>
+        <tr>
+            <td>Item C</td>
+            <td><input name="qnt_3" type="text" id="qnt_3" value="0" size="3" data-price="30" data-category="B"/></td>
+            <td>€30</td>
+        </tr>
+        <tr>
+            <td>Item D</td>
+            <td><input name="qnt_4" type="text" id="qnt_4" value="0" size="3" data-price="24" data-category="B"/></td>
+            <td>€24</td>
+        </tr>
+        <tr>
+            <td class="total">&nbsp;</td>
+            <td class="total right"><strong>Total:</strong></td>
+            <td class="total"><strong>
+                    <div id="ItemsTotal">€0</div>
+                    <div id="ItemsTotal2">€0</div>
+                    <div id="ItemsTotal3">€0</div>
+                </strong></td>
+        </tr>
+    </table>
 
 
-<button id="getCostumers">Get Costumers</button>
+    <script>
+        var total_items = 4;
 
-<div class="usersList" style="display:none;">
-    <h1>Customers</h1>
-    <div id ="customer" class="customer">
-        <table>
-            <tr>
-                <td>NAme</td>
-            </tr>
-            <tr>
-                <td>Pic</td>
-            </tr>
-            <tr>
-                <td>Numer</td>
-            </tr>
-            <tr>
-                <td>Add</td>
-            </tr>
-        </table>
-    </div>
-</div>
+        function CalculateItemsValue(){
+            var total = 0;
+            var total2 =0;
+            var total3 = 0;
 
-<div id="mainPage"></div>
-    
+            for (let i = 1; i <= total_items; i++) {
+               itemID = document.getElementById("qnt_" + i);
+               el = itemID.getAttribute("data-category");
+               total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+               if (el == "B") {
+                   total2 = total2 + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+                   }
+                else if (el =="A"){
+                    total3 = total3 + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+
+                }
+                
+            }
+            document.getElementById('ItemsTotal').innerHTML = "€" + total;
+            document.getElementById('ItemsTotal2').innerHTML = "€" + total2;
+            document.getElementById('ItemsTotal3').innerHTML = "€" + total3;
+        }
 
         
-   
+
+        document.querySelectorAll('[id^="qnt_"]').forEach(item => {
+            item.addEventListener('keyup', CalculateItemsValue);
+        });
+
+    </script>
+</body>
+
+</html>
+© 2021 GitHub, Inc.

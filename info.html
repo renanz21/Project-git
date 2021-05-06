@@ -7,16 +7,107 @@
     <title>Document</title>
     <!--Boostrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body><div class ="container">
+<body>
+    <div class ="container">
     <nav class ="navbar navbar-expand-sm bg-dark navbar-dark">
         <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item active"><a class="nav-link" href="info.html">More info</a></li>
+            <li class="nav-item active"><a class="nav-link" href="info.html">Food Showcase</a></li>
         </ul>
     </nav>
-    <div>
-        <h1 >Page 2</h1>
-    </div>
+    <div style="background-color:  rgb(142, 160, 160);"><h2 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif";>Starters</h2></div>
+    <div id="car-starter" class="carousel slide" data-ride="carousel">
+
+        <ul class="carousel-indicators">
+          <li data-target="#car-starter" data-slide-to="0" class="active"></li>
+          <li data-target="#car-starter" data-slide-to="1"></li>
+          <li data-target="#car-starter" data-slide-to="2"></li>
+        </ul>
+        
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="image/smoked-salmon.jpg" alt="Smoked Salmon" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="image/angry-beans.jpg" alt="Angry Beans" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="image/duck-orange-salad.jpg" alt="Duck Orange salad" width="1100" height="500">
+          </div>
+        </div>
+        
+        <a class="carousel-control-prev" href="#car-starter" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#car-starter" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+
+      <div style="background-color:  rgb(142, 160, 160);"><h2 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif";>Main Courses</h2></div>
+     <div id="car-main" class="carousel slide" data-ride="carousel">
+
+        <ul class="carousel-indicators">
+          <li data-target="#car-main" data-slide-to="0" class="active"></li>
+          <li data-target="#car-main" data-slide-to="1"></li>
+          <li data-target="#car-main" data-slide-to="2"></li>
+        </ul>
+        
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="image/roast-duck.jpg" alt="Roast Duck" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="image/spinach-and-ricotta.jpg" alt="Spinach and riccota" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="image/bean-burguer.jpg" alt="Bean burguer" width="1100" height="500">
+          </div>
+        </div>
+        
+        <a class="carousel-control-prev" href="#car-main" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#car-main" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+
+      <div style="background-color:  rgb(142, 160, 160);"><h2 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif";>Desserts</h2></div>
+     <div id="car-dessert" class="carousel slide" data-ride="carousel">
+
+        <ul class="carousel-indicators">
+          <li data-target="#car-dessert" data-slide-to="0" class="active"></li>
+          <li data-target="#car-dessert" data-slide-to="1"></li>
+          <li data-target="#car-dessert" data-slide-to="2"></li>
+        </ul>
+        
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="image/coconut-yoghurt.jpg" alt="Coconut Yoghurt" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="image/chocolate-pudding.jpg" alt="Chocolate Pudding" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="image/straw-pudding.jpg" alt="Strawberrie Pudding" width="1100" height="500">
+          </div>
+        </div>
+        
+        <a class="carousel-control-prev" href="#car-dessert" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#car-dessert" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      <br>
+      
 </body>
 </html>

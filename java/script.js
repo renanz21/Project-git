@@ -28,16 +28,16 @@ function getUsers(){
                            
                                 <table id="customerTable">
                                     <tr>
-                                        <td>Email : ${user.email}</td>
+                                        <td><b>Email : ${user.email}</b></td>
                                     </tr>
                                     <tr>
                                         <td><img src=${user.picture.large}></td>
                                     </tr>
                                     <tr>
-                                        <td>Phone Number : ${user.phone} <br>   Cell number: ${user.cell}</td>
+                                        <td><b>Phone Number : ${user.phone} <br>   Cell number: ${user.cell}</b></td>
                                     </tr>
                                     <tr>
-                                        <td>Age : ${user.dob.age}</td>
+                                        <td><b>Age : ${user.dob.age}</b></td>
                                     </tr>
                                 </table>
                             </div>
@@ -51,13 +51,64 @@ function getUsers(){
     
 function totalBillCalc(){
         var total = 0;
+        var totalMain = 0;
+        var totalStarter = 0;
+        var totalDessert = 0;
+        var totalDrink = 0;
+        var totalNonVeg  = 0;
+        var totalVeg = 0;
 
         for (let i = 1; i <= total_items; i++) {
            itemID =document.getElementById("val_" + i);
+           elCat = itemID.getAttribute("data-category");
+           elVeg = itemID.getAttribute("data-veg");
            total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+
+           switch (elCat) {
+               case "starter":
+
+                    totalStarter = totalStarter + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+                   
+                   break;
+                case "main":
+
+                    totalMain = totalMain + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+                   
+                   break;
+               case "dessert":
+
+                    totalDessert = totalDessert + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+                   
+                   break;
+                case "drink":
+
+                    totalDrink = totalDrink + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+                   
+                   break; 
+
+               default:
+                   break;
+           }
+
+           if (elVeg == "Yes") {
+
+            totalVeg = totalVeg + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+               
+           } else {
+
+            totalNonVeg = totalNonVeg + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+               
+           }
             
         }
         document.getElementById('ItemsTotal').innerHTML = "€" + total;
+        document.getElementById('StarterTotal').innerHTML = "€" + totalStarter;
+        document.getElementById('MainTotal').innerHTML = "€" + totalMain;
+        document.getElementById('DessertTotal').innerHTML = "€" + totalDessert;
+        document.getElementById('DrinkTotal').innerHTML = "€" + totalDrink;
+        document.getElementById('NonVegTotal').innerHTML = "€" + totalNonVeg;
+        document.getElementById('VegTotal').innerHTML = "€" + totalVeg;
     }
 
-    
+
+   
